@@ -11,9 +11,10 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
     width: 60vw;
     height: 25vh;
+    z-index: 20;
 }
 
 .chip-img {
@@ -62,7 +63,7 @@
 
 .spin-text {
     color: rgb(238, 238, 238);
-    font-family: 'Condiment', cursive;
+    font-family: 'Ubuntu';
     font-size: 4vmin;
     position: absolute;
     margin: 0px;
@@ -137,7 +138,7 @@
     font-size: 9vmin;
     border-radius: 60pt;
     /* padding: 1vw; */
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Ubuntu';
     font-weight: 900;
     /* width: 5%;
     height: 10%; */
@@ -162,7 +163,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(167,120,51, 0.85);
+    background-color: rgb(250,250,0, 0.85);
     z-index: 101;
     border-radius: 6pt;
     padding: 3vh;
@@ -170,7 +171,8 @@
     padding-bottom: 0vh;
     width: 100%;
     height: 18vmin;
-    font-family: 'Condiment', cursive;
+    font-family: 'Ubuntu';
+    color: white;
 }
   
 .winnings-div > h3 {
@@ -187,15 +189,19 @@
 .reset-button, 
 .undo-bet-button,
 .same-bet-button {
+    background: white;
+    border: 2px black;
     padding: 1vh;
     margin-top: 1vh;
-    border-radius: 4pt;
-    font-family: 'Libre Baskerville', serif;
+    margin: 5px;
+    border-radius: 8pt;
+    font-family: 'Ubuntu';
     font-size: 0.7vw;
+    font-weight: bold;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    user-select: none; /* Standard */ 
 }
 
 .restart-button:focus, 

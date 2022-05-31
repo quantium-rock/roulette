@@ -1,7 +1,5 @@
 html {
-  background-image: url(./images/casino-carpet-trimmed.png);
-  background-repeat: repeat;
-  background-size: 20vw 20vw;
+  background: black;
   background-position: center;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -27,15 +25,18 @@ html {
 .wheel-history {
   display: flex;
   width: 63vw;
-  background-color: rgba(167, 121, 51, 0.6);
   border-radius: 14pt;
-  padding-left: 0.5vw;
+  padding-top: 1vh;
+  padding-left: 1.3vw;
   margin-left: .3vw;
-  font-family: 'Condiment', cursive;
-  font-size: 1.7vw;
+  padding-top: .3vw;
+  font-family: 'Ubuntu';
+  min-height: 7vh;
   align-items: center;
   font-weight: bold;
   color: rgb(8, 8, 8);
+  background: linear-gradient(90deg, white, white);
+  margin-top: -15px;
 }
 
 .history-num {
@@ -50,12 +51,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Ubuntu';
   border-radius: 10pt;
   padding: .2vh;
   font-size: 1.6vw;
-  margin-bottom: 1.2vh;
-  margin-left: .1vw;
+  margin-bottom: 1vh;
+  margin-left: .4vw;
+  margin-top: .2vw;
+
 }
 
 .red-previous-number {
@@ -65,12 +68,16 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Ubuntu';
+  border: 3px green;
   border-radius: 10pt;
   padding: .2vh;
   font-size: 1.6vw;
-  margin-bottom: 1.2vh;
-  margin-left: .1vw;
+  margin-bottom: 1vh;
+  margin-left: .4vw;
+  margin-top: .2vw;
+
+
 }
 
 .black-previous-number {
@@ -80,12 +87,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Ubuntu';
   border-radius: 10pt;
   padding: .2vh;
   font-size: 1.6vw;
-  margin-bottom: 1.2vh;
-  margin-left: .1vw;
+  margin-bottom: 1vh;
+  margin-left: .4vw;
+  margin-top: .2vw;
+
 }
 
 .header-h3 {
@@ -96,43 +105,51 @@ html {
   user-select: none; /* Standard */
 }
 
+.header-h4 {
+  font: 'Ubuntu';
+  font-size: 22px;
+  justify-content: center;
+}
+
 .header-div {
   display: flex;
   align-items: flex-start;
-  width: 13vw;
+  width: 100%;
   /* height: 10vh; */
   height: 100%;
-  background: linear-gradient(0.25turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
   text-shadow: rgb(167,120,51) 2px 2px 1px;
   border-radius: 14pt;
   padding-left: 0.5vw;
   margin-left: .3vw;
-  font-family: 'Condiment', cursive;
+  font-family: 'Ubuntu';
   font-size: 2.5vw;
   color: rgb(12, 12, 12);
 }
 
 .right-header {
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  background: linear-gradient(0.75turn, rgb(167,120,51), rgba(167, 121, 51, 0.6));
-  margin-right: .3vw;
-  width: 21vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 30vh;
+  
+}
+
+.header-h4 {
+  color: white;
+  font-size: 30px;
 }
 
 .wood-railing {
   width: 98.4vw;
   height: 58vh;
   /* padding-top: 5vh; */
-  background-image: url(https://data.1freewallpapers.com/download/polished-wood-texture.jpg);
+  background: black;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  border: rgb(78, 9, 1) 4px solid; 
   border-radius: 14pt;
   /* justify-self: center; */
   /* align-self: center; */
@@ -141,7 +158,7 @@ html {
 .chip-count-text {
   color: rgb(238, 238, 238);
   text-shadow: rgb(167,120,51) 2.5px 1px 3px;
-  font-size: 2.5vw;
+  font-size: 2vw;
   /* font-family: 'Libre Baskerville', serif; */
   margin-bottom: .9vh;
 }
@@ -160,13 +177,11 @@ html {
 }
 
 .pending-bet-span {
-  font-size: 1.2vw;
-  color: rgb(238, 238, 238);
-  align-self: flex-end;
-  margin-right: 3vw;
+  color: white;
+  font-size: 1vw;
+  margin-top: 3.5vw;
   position: absolute;
-  right: 2vw;
-  bottom: 0vmin;
+
 }
 
 .empty-pending-bet-span {
@@ -205,4 +220,27 @@ html {
   
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
     
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0 px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 20px;
+}
+
+.twitter-logo {
+  width: 35px;
+  height: 35px;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }

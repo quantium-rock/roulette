@@ -11,8 +11,8 @@ import FiftyThousand from "../images/50k-chip.png";
 import OneHundredK from "../images/100k-chip.png";
 import FiveHundredK from "../images/500k-chip.png";
 import OneMillion from "../images/1m-chip.png";
-import SpinCircle from "../images/spin-circle.png";
-import Wheel from "../images/roulette-wheel.png";
+import SpinCircle from "../images/cat.png";
+import Wheel from "../images/181.png";
 
 export default function BettingOptions({
   chipCount,
@@ -94,22 +94,39 @@ export default function BettingOptions({
 
   return (
     <div className="betting-options-div">
-      <div className="wheel-div">
-        <img
-          alt="roulette wheel"
-          className={
-            isWheelSpinning ? "roulette-wheel-spinning" : "roulette-wheel"
-          }
-          src={Wheel}
-        ></img>
-        {!isWheelSpinning ? (
-          <div className={`${whatColorNumber()} wheel-number-div`}>
-            <h2 className="winning-number-h2">{winningNumber}</h2>
+
+      <div className="spin-img-div">
+        <div className="spin-circle-container">
+          <img
+            alt="spin circle"
+            onClick={spinTheWheel}
+            className="spin-circle"
+            src={SpinCircle}
+          ></img>
+        </div>
+
+        {!isSpinComplete ? (
+          <div className="buttons-div">
+            {pendingTotalBet > 0 ? (
+              <button onClick={resetLayout} className="reset-button">
+                Reset All Bets
+              </button>
+            ) : (
+              <></>
+            )}
+            {recentBets.length > 0 ? (
+              <button onClick={undoRecentBet} className="undo-bet-button">
+                Undo Last Bet
+              </button>
+            ) : (
+              <></>
+            )}
           </div>
         ) : (
-          <></>
+          <div className="filler-div"></div>
         )}
       </div>
+
       <div className="reset-button-div">
         {isSpinComplete ? (
           <div className="winnings-div">
@@ -141,6 +158,7 @@ export default function BettingOptions({
           <></>
         )}
       </div>
+
       <div className="chip-options-div">
         {chipCount >= 1 ? (
           <div className="img-div">
@@ -291,42 +309,37 @@ export default function BettingOptions({
           <></>
         )}
       </div>
-      <div className="spin-img-div">
-        <div className="spin-circle-container">
-          <img
-            alt="spin circle"
-            onClick={spinTheWheel}
-            className="spin-circle"
-            src={SpinCircle}
-          ></img>
+
+      <div className="wheel-div">
+        <div className="header-div right-header">
+          <h4 className="header-h4">
+            USDC: <span className="chip-count-text">{chipCount}</span>
+          </h4 >
+          {
+            pendingTotalBet > 0 ? (
+              <span className="pending-bet-span">
+                Pending Bet: -{pendingTotalBet}
+              </span>
+            ) : (
+              <></>
+            )
+          }
         </div>
-        {!isSpinComplete ? (
-          <div className="buttons-div">
-            {chipCount >= previousTotalBet && previousTotalBet > 0 ? (
-              <button onClick={sameBet} className="same-bet-button">
-                Same Bet
-              </button>
-            ) : (
-              <></>
-            )}
-            {pendingTotalBet > 0 ? (
-              <button onClick={resetLayout} className="reset-button">
-                Reset All Bets
-              </button>
-            ) : (
-              <></>
-            )}
-            {recentBets.length > 0 ? (
-              <button onClick={undoRecentBet} className="undo-bet-button">
-                Undo Last Bet
-              </button>
-            ) : (
-              <></>
-            )}
+        <img
+          alt="roulette wheel"
+          className={
+            isWheelSpinning ? "roulette-wheel-spinning" : "roulette-wheel"
+          }
+          src={Wheel}
+        ></img>
+        {!isWheelSpinning ? (
+          <div className={`${whatColorNumber()} wheel-number-div`}>
+            <h2 className="winning-number-h2">{winningNumber}</h2>
           </div>
         ) : (
-          <div className="filler-div"></div>
+          <></>
         )}
+
       </div>
     </div>
   );
